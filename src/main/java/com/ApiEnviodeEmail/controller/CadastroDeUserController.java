@@ -32,6 +32,9 @@ public class CadastroDeUserController {
         UsuarioEntity usuarioEntity = new UsuarioEntity();
         BeanUtils.copyProperties(usuarioDTO, usuarioEntity);
         usuarioRepository.save(usuarioEntity);
+
+        emailService.enviarEmail(usuarioEntity.getEmail(),"API-SAMUEL",
+                "Sucesso ao cadastrar-se.");
         return new ResponseEntity<>( usuarioEntity,HttpStatus.CREATED);
     }
     @GetMapping ("/{id}")
@@ -49,8 +52,8 @@ public class CadastroDeUserController {
         if (usuarioEntity.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario não encontrado");
         } else {
-            emailService.enviarEmail(usuarioEntity.get().getEmail(), "Usuario deletado com sucesso",
-                    "teste");
+            emailService.enviarEmail(usuarioEntity.get().getEmail(), "API-SAMUEL",
+                    "Seu usuario foi deletado com sucesso.");
             usuarioRepository.deleteById(id);
             return new ResponseEntity(HttpStatus.OK);
 
