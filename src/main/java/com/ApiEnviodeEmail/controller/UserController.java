@@ -1,22 +1,12 @@
 package com.ApiEnviodeEmail.controller;
 
-import com.ApiEnviodeEmail.dto.UsuarioDTO;
-import com.ApiEnviodeEmail.entity.UsuarioEntity;
-import com.ApiEnviodeEmail.repository.UsuarioRepository;
-import com.ApiEnviodeEmail.service.EmailService;
-import jakarta.validation.constraints.Email;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+
 
 import java.util.Optional;
-
+/*@CrossOrigin
 @RestController
 @RequestMapping ("/user/cadastro")
-public class CadastroDeUserController {
+public class UserController {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -63,4 +53,5 @@ public class CadastroDeUserController {
 
 
     }
-}
+}*/
+

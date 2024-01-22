@@ -8,30 +8,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-/*@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
-@Table( name ="tb_cadUsuarios")
-public class UsuarioEntity {
-
+@Table ( name = "tb_userSistema")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class CadastrarUser {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue ( strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column ( unique = true)
+    private String nomeCompleto;
     @NotEmpty
-    private String login;
-
+    @Column (unique = true)
+    private String Cpf;
     @NotEmpty
-    private String senha;
+    private String cep;
 
+    private int nCasa;
     @Email
-    @Column ( unique = true)
-    @NotEmpty
     private String email;
 
-}*/
+}
